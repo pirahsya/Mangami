@@ -24,3 +24,8 @@ export function updateUserManga(mal_id, updates) {
   );
   saveUserList(list);
 }
+
+export function removeFromUserList(mal_id) {
+  const list = getUserList().filter((m) => m.mal_id !== mal_id);
+  saveUserList(list);
+}
