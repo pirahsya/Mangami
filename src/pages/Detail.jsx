@@ -37,7 +37,6 @@ export default function Detail() {
       notes: "",
       updatedAt: new Date().toISOString(),
     });
-    alert("Added to your list!");
   };
 
   const handleStatusChange = (e) => {
