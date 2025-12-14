@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { getTopManga } from "../services/mangaService";
 import { useAsync } from "../hooks/useAsync";
 
@@ -12,14 +13,18 @@ export default function Home() {
       <h2 className="text-xl font-semibold mb-4">Top Manga</h2>
       <ul className="grid grid-cols-2 md:grid-cols-5 gap-4">
         {data.map((manga) => (
-          <li key={manga.mal_id}>
+          <Link
+            key={manga.mal_id}
+            to={`/manga/${manga.mal_id}`}
+            className="block"
+          >
             <img
               src={manga.images.jpg.image_url}
               alt={manga.title}
               className="rounded"
             />
             <p className="mt-1 text-sm">{manga.title}</p>
-          </li>
+          </Link>
         ))}
       </ul>
     </div>

@@ -1,9 +1,13 @@
-import Home from "./pages/Home";
+import { BrowserRouter } from "react-router-dom";
+import Layout from "./components/Layout";
+import AppRoutes from "./routes/AppRoutes";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 p-6">
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <AppRoutes />
+      </Layout>
+    </BrowserRouter>
   );
 }
